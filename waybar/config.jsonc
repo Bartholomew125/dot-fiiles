@@ -1,0 +1,96 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "cpu", "network", "pulseaudio", "battery"],
+    "spacing": 10,
+    // "height": 30,
+    "position": "top",
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "battery": {
+        "interval": 1,
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "{timeTo}",
+        "states": {
+            "warning": 10,
+            "critical": 5
+        }
+    },
+
+    // "clock": {
+    //     "timezone": "Europe/Copenhagen",
+    //     "format": "{:%T}",
+    //     "interval": 1,
+    //     "tooltip": true,
+    //     "tooltip-format": "{:%F %A Week %V}"
+    // },
+
+    "clock": {
+        "timezone": "Europe/Copenhagen",
+        "format": "{:%H:%M:%S}",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "{:%d-%m-%Y Week %V %A}"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-focused": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "icon": true,
+        "icon-size": 15,
+        "rewrite": {
+            "^(.*?) - .*": "$1"
+        }
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 10
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "muted",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "tooltip": false,
+        "scroll-step": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "ignored-sinks": ["Easy Effects Sink"]
+    }
+}

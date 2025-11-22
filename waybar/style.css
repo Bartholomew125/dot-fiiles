@@ -1,0 +1,68 @@
+@import url("file:///etc/xdg/waybar/style.css");
+
+* {
+    font-family: "Monocraft Nerd Font";
+    font-size: 12;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(199, 121, 239, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#cpu {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+}
+
+#battery {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+}
+
+#battery.warning {
+    color: #ffffff;
+    background: rgba(100,0,0,0.5);
+}
+
+#battery.critical {
+    color: #ffffff;
+    background: rgba(255,0,0,1);
+}
+
+#battery.charging {
+    color: #ffffff;
+    background: rgba(0,255,0,0.5);
+}
+
+#network {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+}
+
+#clock {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+    border-bottom: none;
+}
+
+#tray {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+}
+
+#pulseaudio {
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+}
+
+#workspaces button.active {
+    background: rgba(255,255,255,0.2);
+}
