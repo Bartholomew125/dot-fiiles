@@ -1,0 +1,9 @@
+[user]
+	name = Andreas Kapp Lindquist
+	email = andkaplin05@gmail.com
+[credential]
+	helper = store --file ~/.config/git/credentials
+[rerere]
+	enable = true
+[pull]
+	rebase = true
