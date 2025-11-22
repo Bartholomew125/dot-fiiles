@@ -1,0 +1,15 @@
+# --- Basic setup ---
+set pagination off
+set disassembly-flavor intel
+set confirm off
+
+tui enable
+
+# --- Define custom layout (top=regs, mid=asm, bottom=cmd) ---
+tui new-layout asmregs {-horizontal src 1 regs 1} 2 status 0 cmd 1
+layout asmregs
+focus cmd
+
+# --- Optional: tweak window heights ---
+# winheight regs 10
+# winheight asm 20
