@@ -40,3 +40,6 @@ export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 
 # wget
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+
+# nvm
+export NVM_DIR="$XDG_DATA_HOME"/nvm
