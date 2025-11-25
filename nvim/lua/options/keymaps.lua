@@ -80,8 +80,8 @@ end
 -- Faster write keybind
 vim.keymap.set("n", "<leader>w", smart_write, { desc = "Write the file, and compile if .tex" })
 
-vim.keymap.set("n", "<S-j>", "<cmd>m +1<cr>", { desc = "Move current line down" })
-vim.keymap.set("n", "<S-k>", "<cmd>m -2<cr>", { desc = "Move current line up" })
+vim.keymap.set("n", "<A-j>", "<cmd>m +1<cr>", { desc = "Move current line down" })
+vim.keymap.set("n", "<A-k>", "<cmd>m -2<cr>", { desc = "Move current line up" })
 
 vim.keymap.set("n", "<tab>", "<cmd>tabnext<cr>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<S-tab>", "<cmd>tabnext -<cr>", { desc = "Go to previous tab" })
