@@ -5,6 +5,7 @@ local debug_keys = {
   r = {function() require("dap").continue() end, "[Debug] run" },
   n = {function() require("dap").step_over() end,"[Debug] next"},
   i = {function() require("dap").step_into() end,"[Debug] into"},
+  s = {function() require("dap").step_into() end,"[Debug] into"},
   o = {function() require("dap").step_out() end, "[Debug] out" },
   b = {function() require("dap").toggle_breakpoint() end, "[Debug] breakpoint toggle" },
 }
@@ -21,6 +22,10 @@ enable_debug_mode = function()
     -- Create scopes sidebar
     local widgets = require("dap.ui.widgets")
     widgets.sidebar(widgets.scopes).open()
+    vim.cmd("wincmd h")
+    vim.cmd("wincmd L")
+    vim.cmd("wincmd =")
+    vim.cmd("wincmd h")
 
     -- Create a session without continuing
     require("dap").run({ 
@@ -51,12 +56,8 @@ disable_debug_mode = function()
     require("dap").terminate()
 
     -- Close all dap-ui sidebar windows
-    local widgets = require("dap.ui.widgets")
-    for _, win in ipairs(widgets.windows or {}) do
-        if vim.api.nvim_win_is_valid(win) then
-            vim.api.nvim_win_close(win,true)
-        end
-    end
+    vim.cmd("wincmd l")
+    vim.cmd("wincmd q")
 
     -- Remove debugging keybinds
     for key, _ in pairs(debug_keys) do
